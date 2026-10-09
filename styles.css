@@ -1902,57 +1902,72 @@ button {
   }
 }
 
-/* Storefront Photo Column */
+/* Storefront Photo Column - Fully Visible Uncropped */
 .location-map-col {
   position: relative;
-  min-height: 260px;
-  background-color: var(--c-espresso-950);
+  background: radial-gradient(circle at center, #26150c 0%, #140a06 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
 }
 
 @media (min-width: 768px) {
   .location-map-col {
-    min-height: 340px;
+    padding: 2rem;
   }
 }
 
 .storefront-card {
   position: relative;
   width: 100%;
-  height: 100%;
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(245, 184, 0, 0.35);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
+  background: #180c07;
 }
 
 .storefront-photo {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  max-height: 480px;
+  object-fit: contain; /* 100% full uncropped storefront image */
+  display: block;
+  background-color: #1a0e08;
 }
 
 .storefront-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to top, rgba(18, 9, 5, 0.92) 0%, rgba(18, 9, 5, 0.4) 60%, transparent 100%);
-  padding: 1.5rem 1.25rem 1.25rem;
+  position: relative;
+  width: 100%;
+  background: rgba(22, 11, 6, 0.96);
+  border-top: 1px solid rgba(245, 184, 0, 0.25);
+  padding: 0.9rem 1.25rem;
   color: var(--c-ivory-50);
+  text-align: center;
 }
 
 .storefront-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: rgba(245, 184, 0, 0.2);
+  background: rgba(245, 184, 0, 0.15);
   border: 1px solid var(--c-gold-500);
   color: var(--c-gold-400);
-  padding: 0.3rem 0.75rem;
+  padding: 0.25rem 0.75rem;
   border-radius: var(--radius-full);
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-weight: 700;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.25rem;
 }
 
 .storefront-overlay p {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--c-text-light-muted);
 }
 
